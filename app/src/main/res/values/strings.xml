@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NotaMu</string>
+    <string name="title_data_konsumen">Data Konsumen</string>
+    <string name="label_nama_barang">Nama barang</string>
+    <string name="label_stok">Stok</string>
+    <string name="label_satuan">Satuan</string>
+    <string name="label_harga">Harga</string>
+    <string name="btn_simpan">Simpan</string>
+</resources>

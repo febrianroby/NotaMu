@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="10dp">
+
+    <TextView
+        android:id="@+id/tvNo"
+        android:minWidth="48dp"
+        android:gravity="end"/>
+
+    <TextView
+        android:id="@+id/tvNama"
+        android:minWidth="160dp"
+        android:paddingStart="12dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvHarga"
+        android:minWidth="110dp"
+        android:paddingStart="12dp"
+        android:gravity="end"/>
+
+    <TextView
+        android:id="@+id/tvStok"
+        android:minWidth="64dp"
+        android:paddingStart="12dp"
+        android:gravity="end"/>
+
+    <TextView
+        android:id="@+id/tvSatuan"
+        android:minWidth="80dp"
+        android:paddingStart="12dp"/>
+</LinearLayout>
