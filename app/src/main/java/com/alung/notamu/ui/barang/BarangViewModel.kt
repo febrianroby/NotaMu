@@ -15,9 +15,9 @@ class BarangViewModel @Inject constructor(
 
     val items = repo.allBarang
 
-    fun addBarang(nama: String, stok: Int, satuan: String, harga: Double) {
+    fun addBarang(nama: String, stok: Double, satuan: String, harga: Long) {
         viewModelScope.launch {
-            repo.insert(Barang(nama = nama, stok = stok, satuan = satuan, harga = harga))
+            repo.insert(Barang(nama = nama, stok = stok.toDouble(), satuan = satuan, harga = harga.toLong()))
         }
     }
     fun updateBarang(b: Barang) = viewModelScope.launch { repo.update(b) }

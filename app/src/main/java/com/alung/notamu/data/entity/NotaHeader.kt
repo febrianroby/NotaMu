@@ -6,17 +6,23 @@ import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "nota",
-    indices = [Index(value = ["konsumenId"]), Index(value = ["notaNo"], unique = true)]
+    indices = [
+        Index(value = ["konsumenId"]),
+        Index(value = ["notaNo"], unique = true)
+    ]
 )
 data class NotaHeader(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val tanggal: Long,
+    val tanggal: Long = System.currentTimeMillis(),
     val konsumenId: Int,
-    val notaNo: String,
-    var bon: Double = 0.0,
-    var retur: Double = 0.0,
-    var diskon: Double = 0.0,
-    var totalBarang: Double = 0.0,
-    var totalAkhir: Double = 0.0,
-    var bayar: Double = 0.0
+    // Nullable supaya UNIQUE tidak bentrok kalau banyak yang kosong (NULL boleh duplikat di SQLite)
+    val notaNo: String? = null,
+
+    // Field opsional dengan default 0.0 → kamu bebas isi belakangan
+    var bon: Long = 0L,
+    var retur: Long = 0L,
+    var diskon: Long = 0L,
+    var totalBarang: Long = 0L,
+    var totalAkhir: Long = 0L,
+    var bayar: Long = 0L
 )

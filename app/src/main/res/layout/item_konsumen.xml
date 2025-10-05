@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:paddingHorizontal="8dp" android:paddingVertical="10dp"
+    android:minHeight="48dp" android:background="?attr/selectableItemBackground">
+
+    <TextView android:id="@+id/tvNo" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:minWidth="48dp" android:gravity="end"/>
+    <TextView android:id="@+id/tvNama" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:minWidth="160dp" android:paddingStart="12dp" android:textStyle="bold"/>
+    <TextView android:id="@+id/tvAlamat" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:minWidth="200dp" android:paddingStart="12dp"/>
+    <TextView android:id="@+id/tvTelp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:minWidth="120dp" android:paddingStart="12dp"/>
+    <TextView android:id="@+id/tvSaldo" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:minWidth="120dp" android:paddingStart="12dp" android:gravity="end"/>
+</LinearLayout>

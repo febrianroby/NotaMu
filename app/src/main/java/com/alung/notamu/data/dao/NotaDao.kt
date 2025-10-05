@@ -19,4 +19,18 @@ interface NotaDao {
     @Transaction
     @Query("SELECT * FROM nota WHERE id = :id")
     suspend fun byIdWithItems(id: Int): NotaWithItems?
+
+    // === Query khusus tampilan RecyclerView ===
+    @Query("""
+        SELECT ni.barangId,
+               b.nama AS nama,
+               ni.qty AS qty,
+               ni.harga AS harga,
+               CAST(ROUND(ni.qty * ni.harga) AS INTEGER) AS jumlah
+        FROM nota_item ni
+        JOIN barang b ON b.id = ni.barangId
+        WHERE ni.notaId = :notaId
+        ORDER BY b.nama
+    """)
+    fun getItemsUI(notaId: Int): kotlinx.coroutines.flow.Flow<List<NotaItemUI>>
 }

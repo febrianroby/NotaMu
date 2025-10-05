@@ -1,7 +1,10 @@
 package com.alung.notamu.data.entity
-import androidx.room.*
 
-@Entity(tableName = "konsumen", indices = [Index(value = ["nama"])])
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "konsumen", indices = [Index("nama")])
 data class Konsumen(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     var nama: String,

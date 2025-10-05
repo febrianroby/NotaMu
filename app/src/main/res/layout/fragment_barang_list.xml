@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >  <!-- was @android:color/white -->
 
-    <!-- Form input -->
+    <!-- Nama -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:hintEnabled="true"
-        android:hint="@string/label_nama_barang">
+        android:hint="@string/label_nama_barang"
+        app:boxBackgroundMode="outline">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNama"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Stok & Satuan -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,13 +33,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/label_stok">
+            android:hint="@string/label_stok"
+            app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etStok"
-                android:inputType="number"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:imeOptions="actionNext" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <View
@@ -46,28 +52,34 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/label_satuan">
+            android:hint="@string/label_satuan"
+            app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etSatuan"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
+    <!-- Harga -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="@string/label_harga">
+        android:hint="@string/label_harga"
+        app:boxBackgroundMode="outline">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etHarga"
-            android:inputType="numberDecimal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:imeOptions="actionDone" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Simpan -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSimpan"
         style="?attr/materialButtonOutlinedStyle"
@@ -76,40 +88,96 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_simpan"/>
 
-    <!-- Tabel (ambil sisa tinggi layar) -->
-    <HorizontalScrollView
+    <!-- TABEL -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginTop="16dp"
-        android:fillViewport="true">
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp"
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+        >
 
-            <!-- Header kolom -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingVertical="8dp">
+                android:layout_height="match_parent"
+                >
 
-                <TextView android:text="No"           android:minWidth="48dp"  android:textStyle="bold" android:gravity="end"/>
-                <TextView android:text="Nama Barang"  android:minWidth="160dp" android:textStyle="bold" android:paddingStart="12dp"/>
-                <TextView android:text="Harga"        android:minWidth="110dp" android:textStyle="bold" android:paddingStart="12dp" android:gravity="end"/>
-                <TextView android:text="Stok"         android:minWidth="64dp"  android:textStyle="bold" android:paddingStart="12dp" android:gravity="end"/>
-                <TextView android:text="Satuan"       android:minWidth="80dp"  android:textStyle="bold" android:paddingStart="12dp"/>
+                <!-- Header -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:textStyle="bold"
+                        android:minWidth="48dp"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Barang"
+                        android:textStyle="bold"
+                        android:minWidth="160dp"
+                        android:paddingStart="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Harga"
+                        android:textStyle="bold"
+                        android:minWidth="110dp"
+                        android:paddingStart="12dp"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stok"
+                        android:textStyle="bold"
+                        android:minWidth="64dp"
+                        android:paddingStart="12dp"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Satuan"
+                        android:textStyle="bold"
+                        android:minWidth="80dp"
+                        android:paddingStart="12dp" />
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:dividerInsetStart="16dp"
+                    app:dividerInsetEnd="16dp"
+                    app:thickness="1dp"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp" />
             </LinearLayout>
-
-            <!-- List -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-        </LinearLayout>
-    </HorizontalScrollView>
+        </HorizontalScrollView>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

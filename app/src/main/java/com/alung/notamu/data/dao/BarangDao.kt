@@ -20,7 +20,8 @@ interface BarangDao {
     @Query("SELECT * FROM barang WHERE id = :id")
     suspend fun byId(id: Int): Barang?
 
-    // Catatan: qty Int menyesuaikan stok Int di entity Barang
+    // kalau stok pecahan:
     @Query("UPDATE barang SET stok = stok - :qty WHERE id = :barangId AND stok >= :qty")
-    suspend fun decreaseStock(barangId: Int, qty: Int): Int
+    suspend fun decreaseStock(barangId: Int, qty: Double): Int
 }
+

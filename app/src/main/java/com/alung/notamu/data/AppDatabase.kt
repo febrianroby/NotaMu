@@ -12,7 +12,7 @@ import com.alung.notamu.data.entity.NotaItem
 
 @Database(
     entities = [Barang::class, Konsumen::class, NotaHeader::class, NotaItem::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

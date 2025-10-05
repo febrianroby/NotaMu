@@ -5,6 +5,8 @@ import com.alung.notamu.data.entity.Barang
 import com.alung.notamu.data.dao.BarangDao
 import javax.inject.Inject
 
+
+
 class BarangRepository @Inject constructor(
     private val dao: BarangDao
 ) {
