@@ -30,7 +30,7 @@ class KonsumenAdapter(
 
     override fun onBindViewHolder(h: VH, position: Int) {
         val it = getItem(position)
-        h.b.tvNo.text = (h.bindingAdapterPosition + 1).toString()
+        h.b.tvNo.text = (position + 1).toString()
         h.b.tvNama.text = it.nama
         h.b.tvAlamat.text = it.alamat.orEmpty()
         h.b.tvTelp.text = it.telp.orEmpty()
@@ -40,5 +40,4 @@ class KonsumenAdapter(
                  if (pos != RecyclerView.NO_POSITION) onClick(getItem(pos))
         }
     }
-
 }

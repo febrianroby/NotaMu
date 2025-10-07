@@ -28,7 +28,7 @@ class BarangAdapter(
 
     override fun onBindViewHolder(h: VH, position: Int) {
         val item = getItem(position)
-        h.b.tvNo.text = (h.bindingAdapterPosition + 1).toString()
+        h.b.tvNo.text     = (position + 1).toString()
         h.b.tvNama.text   = item.nama
         h.b.tvHarga.text  = rupiah.format(item.harga)
         h.b.tvStok.text   = item.stok.toString()
