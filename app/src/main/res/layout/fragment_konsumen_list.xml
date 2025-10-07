@@ -1,62 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:padding="16dp"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
 
     <!-- Form -->
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Tuan / Toko">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tuan / Toko"
+        app:boxBackgroundMode="outline">
+
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etNama" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            android:id="@+id/etNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Alamat" android:layout_marginTop="8dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Alamat"
+        app:boxBackgroundMode="outline">
+
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etAlamat" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            android:id="@+id/etAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="No Telp" android:layout_marginTop="8dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="No Telp"
+        app:boxBackgroundMode="outline">
+
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etTelp" android:inputType="phone"
-            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            android:id="@+id/etTelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:imeOptions="actionDone" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Simpan -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSimpan" style="?attr/materialButtonOutlinedStyle"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_marginTop="12dp" android:text="Simpan"/>
+        android:id="@+id/btnSimpan"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="SIMPAN" />
 
-    <!-- Tabel -->
-    <HorizontalScrollView
-        android:layout_width="match_parent" android:layout_height="0dp"
-        android:layout_weight="1" android:layout_marginTop="16dp" android:fillViewport="true">
-        <LinearLayout android:orientation="vertical"
-            android:layout_width="wrap_content" android:layout_height="match_parent">
+    <!-- TABEL -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="?attr/colorSurface">
 
-            <!-- Header -->
-            <LinearLayout android:orientation="horizontal"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:paddingVertical="8dp">
-                <TextView android:text="No" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:minWidth="48dp" android:textStyle="bold" android:gravity="end"/>
-                <TextView android:text="Tuan/Toko" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:minWidth="160dp" android:paddingStart="12dp" android:textStyle="bold"/>
-                <TextView android:text="Alamat" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:minWidth="200dp" android:paddingStart="12dp" android:textStyle="bold"/>
-                <TextView android:text="Telp" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:minWidth="120dp" android:paddingStart="12dp" android:textStyle="bold"/>
-                <TextView android:text="Saldo" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:minWidth="120dp" android:paddingStart="12dp" android:textStyle="bold" android:gravity="end"/>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <!-- Header -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:textStyle="bold"
+                        android:minWidth="48dp"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tuan/Toko"
+                        android:textStyle="bold"
+                        android:minWidth="160dp"
+                        android:paddingStart="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat"
+                        android:textStyle="bold"
+                        android:minWidth="200dp"
+                        android:paddingStart="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Telp"
+                        android:textStyle="bold"
+                        android:minWidth="120dp"
+                        android:paddingStart="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saldo"
+                        android:textStyle="bold"
+                        android:minWidth="120dp"
+                        android:paddingStart="12dp"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:dividerInsetStart="16dp"
+                    app:dividerInsetEnd="16dp"
+                    app:thickness="1dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp" />
             </LinearLayout>
+        </HorizontalScrollView>
+    </com.google.android.material.card.MaterialCardView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1"/>
-        </LinearLayout>
-    </HorizontalScrollView>
 </LinearLayout>

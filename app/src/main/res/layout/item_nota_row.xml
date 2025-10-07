@@ -1,16 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:orientation="horizontal" android:paddingHorizontal="8dp" android:paddingVertical="10dp"
-    android:background="?attr/selectableItemBackground">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless">
 
-    <TextView android:id="@+id/tvQty" android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:minWidth="64dp" android:gravity="end" />
-    <TextView android:id="@+id/tvNama" android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:minWidth="200dp" android:paddingStart="12dp" android:textStyle="bold"/>
-    <TextView android:id="@+id/tvHarga" android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:minWidth="120dp" android:paddingStart="12dp" android:gravity="end"/>
-    <TextView android:id="@+id/tvJumlah" android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:minWidth="140dp" android:paddingStart="12dp" android:gravity="end"/>
-    <Button android:id="@+id/btnHapus" android:layout_width="48dp" android:layout_height="wrap_content" android:text="X" android:padding="0dp" android:layout_marginStart="8dp"/>
+    <!-- No urut -->
+    <TextView
+        android:id="@+id/tvNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="48dp"
+        android:gravity="end"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="64dp"
+        android:paddingStart="12dp"
+        android:gravity="end" />
+
+    <TextView
+        android:id="@+id/tvNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:paddingStart="12dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvHarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120dp"
+        android:paddingStart="12dp"
+        android:gravity="end" />
+
+    <TextView
+        android:id="@+id/tvJumlah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="140dp"
+        android:paddingStart="12dp"
+        android:gravity="end" />
+
+    <!-- boleh tetap pakai Button "X" -->
+    <Button
+        android:id="@+id/btnHapus"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:padding="0dp"
+        android:text="X" />
 </LinearLayout>
