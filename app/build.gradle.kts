@@ -73,5 +73,5 @@ dependencies {
 kapt {
     correctErrorTypes = true
     showProcessorStats = true
-    // verbose = true // aktifkan jika perlu log detail
+
 }
